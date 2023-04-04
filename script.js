@@ -1,5 +1,4 @@
 const userID = "497010169704742912"; //put ur discord user id here.
-require("dotenv").config();
 const statusImage = document.getElementById("status-image");
 const discordUsername = document.getElementById("discord-username");
 const discordDiscrim = document.getElementById("discord-discriminator");
