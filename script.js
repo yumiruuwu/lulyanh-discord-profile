@@ -56,18 +56,28 @@ async function fetchDiscordStatus() {
     }
 
     //Get user's avatar & banner(if they have one)
-    let discordApi = fetch(`https://discord.com/api/v10/users/${userID}`, {
-      method: 'GET',
-      headers: {
-        Authorization: `Bot ${process.env.TOKEN}`
-      }
-    });
+    const discordLookup = await axios.get(`https://discordlookup.mesavirep.xyz/v1/user/${userID}`);
+    const { avatar, banner } = discordLookup.data;
 
-    console.log(discordApi);
+    if (avatar.id === null) {
+      discordUserAvatar.src = "https://cdn.discordapp.com/embed/avatars/0.png";
+    }
 
-    discordUserAvatar.src = `https://cdn.discordapp.com/avatars/${userID}/${discord_user.avatar}.png?size=1024`;
-    discordUserBanner.src = `https://cdn.discordapp.com/avatars/${userID}/${discordApi.banner}.png?size=1024`
+    if (avatar.is_animated === true) {
+      discordUserAvatar.src = `https://cdn.discordapp.com/avatars/${userID}/${discord_user.avatar}.gif?size=1024`;
+    } else {
+      discordUserAvatar.src = `https://cdn.discordapp.com/avatars/${userID}/${discord_user.avatar}.png?size=1024`;
+    }
 
+    if (banner.id === null) {
+      discordUserBanner.src = "/public/banner.webp";
+    }
+
+    if (banner.is_animated === true) {
+      discordUserBanner.src = `https://cdn.discordapp.com/banners/${userID}/${banner.id}.gif?size=1024`;
+    } else {
+      discordUserBanner.src = `https://cdn.discordapp.com/banners/${userID}/${banner.id}.png?size=1024`;
+    }
 
     // Update the image.
     statusImage.src = imagePath;
@@ -78,4 +88,4 @@ async function fetchDiscordStatus() {
 }
 
 fetchDiscordStatus();
-setInterval(fetchDiscordStatus, 5000); // Update status every 5 seconds
+setInterval(fetchDiscordStatus, 10000); // Update status every 10 seconds
