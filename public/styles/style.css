@@ -73,7 +73,9 @@ body {
   right: 0;
   bottom: 0;
   display: block;
-  background-image: url("/public/background.jpg");
+  background-image: url("/public/red_flower.png");
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
   background-size: cover;
   background-repeat: no-repeat;
   z-index: -1;
