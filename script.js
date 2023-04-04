@@ -1,5 +1,5 @@
 const userID = "497010169704742912"; //put ur discord user id here.
-import token from "./token.json" assert { type: "json" };
+require("dotenv").config();
 const statusImage = document.getElementById("status-image");
 const discordUsername = document.getElementById("discord-username");
 const discordDiscrim = document.getElementById("discord-discriminator");
@@ -60,7 +60,7 @@ async function fetchDiscordStatus() {
     let discordApi = fetch(`https://discord.com/api/v10/users/${userID}`, {
       method: 'GET',
       headers: {
-        Authorization: `Bot ${token}`
+        Authorization: `Bot ${process.env.TOKEN}`
       }
     });
 
