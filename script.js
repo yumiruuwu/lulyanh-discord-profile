@@ -79,7 +79,6 @@ async function fetchDiscordStatus() {
       discordUserBanner.src = `https://cdn.discordapp.com/banners/${userID}/${banner.id}.png?size=1024`;
     }
 
-    // Update the image.
     statusImage.src = imagePath;
     statusImage.alt = `Discord status: ${discord_status}`;
   } catch (error) {
