@@ -137,6 +137,15 @@ body {
   left: 16px;
 }
 
+.avatar-frame img {
+  position: absolute;
+  pointer-events: none;
+  bottom: -0.3cm;
+  right: -0.4cm;
+  width: 144px !important;
+  height: 144px;
+}
+
 .avatar img {
   width: 120px;
   border-radius: 50%;
@@ -148,15 +157,18 @@ body {
   transform: translate(50%, 50%);
   position: absolute;
   background-color: #f8eaea;
-  bottom: 14.64%;
-  right: 14.64%;
+  bottom: 15%;
+  right: 15%;
   border-radius: 50%;
   /* padding: 8px; */
   border: 8px solid #f8eaea;
+  top: 62px;
 }
 
 .status img {
-  width: 20px;
+  width: 24px;
+  padding-bottom: 0px !important;
+  margin-bottom: 5px;
 }
 
 .badges {
@@ -400,8 +412,23 @@ body {
     width: 80px;
   }
 
+  .status {
+    -webkit-transform: translate(50%, 50%);
+    transform: translate(50%, 50%);
+    position: absolute;
+    background-color: #f8eaea;
+    bottom: 15%;
+    right: 15%;
+    border-radius: 50%;
+    /* padding: 8px; */
+    border: 4px solid #f8eaea;
+    top: 44px;
+  }
+
   .status img {
     width: 16px;
+    padding-bottom: 0px !important;
+    margin-bottom: 10px;
   }
 
   .profile .header {
@@ -412,17 +439,17 @@ body {
     padding: 0 16px 16px 16px;
   }
   .card {
-  margin: 70px 16px 16px;
-  background: linear-gradient(to bottom, #f7efed, #fef3f4);
-  border-radius: 5px;
-  padding-top: -100px;
+    margin: 70px 16px 16px;
+    background: linear-gradient(to bottom, #f7efed, #fef3f4);
+    border-radius: 5px;
+    padding-top: -100px;
+  }
 
-}
   .username {
-  font-size: 20px;
-  color: #060607;
-  margin: 0 16px 0px -3px;
-}
+    font-size: 20px;
+    color: #060607;
+    margin: 0 16px 0px -3px;
+  }
   .text-status {
     margin: 0 16px 0px 14px;
     color: #060607;
@@ -434,6 +461,11 @@ body {
 
   .platform {
     width: 210.4px;
+  }
+
+  .avatar-frame img {
+    width: 100px !important;
+    height: 100px;
   }
 }
 
