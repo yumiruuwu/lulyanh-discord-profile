@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" crossorigin />
     <title>lulyanh.'s Profile</title>
     <meta name="description" content="lulyanh.'s Discord looking profile card.">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
     <div class="container">
@@ -32,16 +33,25 @@
             <div class="badges">
               <!-- badges list-->
               <img
-                alt=" "
+                data-toggle="tooltip"
+                data-placement="top"
+                title="HypeSquad Balance"
+                alt="HypeSquad Balance"
                 aria-hidden="true"
                 src="/public/badges/hypesquad_balance.svg" />
               <img
-                alt=" "
+                data-toggle="tooltip"
+                data-placement="top"
+                title="Active Developer"
+                alt="Active Developer"
                 aria-hidden="true"
                 src="/public/badges/active_developer.svg" />
-              <img alt=" " aria-hidden="true" src="/public/badges/nitro.svg" />
+              <img data-toggle="tooltip" data-placement="top" title="Subscriber since 23 Nov 2022" alt="Subscriber since 23 Nov 2022" aria-hidden="true" src="/public/badges/nitro.svg" />
               <img
-                alt=" "
+                data-toggle="tooltip"
+                data-placement="top"
+                title="Server Boosting since 30 Jan 2023"
+                alt="Server Boosting since 30 Jan 2023"
                 aria-hidden="true"
                 src="/public/badges/boost_2_month.svg" />
               <!-- -->
@@ -54,7 +64,8 @@
             </div>
           </div>
           <span class="text-base text-status" id="user-status"></span>
-          <div class="divider"></div>
+          <br>
+          <!-- <div class="divider"></div> -->
           <div class="body">
             <div class="content">
               <div class="about-section">
@@ -62,7 +73,6 @@
                 <!-- text -->
                 <span class="text-base">What's this, OwO?</span><br>
                 <!-- <span class="text-base" title="I applied a blur effect on the background image just to prevent pixelation, so if you don't mind 💀">Hover me!!</span> -->
-                <br>
                 <br>
                 <span class="text-base">• <b>About Me?</b> - <a href="https://mykm.yumiruuwu.com" target="_blank">Mykm</a></span>
                 <!-- -->
@@ -148,13 +158,17 @@
                 </div>
                 <!-- -->
               </div>
-              <div class="divider social-divider"></div>
+              <br>
+              <!-- <div class="divider social-divider"></div> -->
           </div>
             </div>
           </div>
         </div>  
       </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="module" src="script.js"></script>
   </body>

@@ -58,7 +58,7 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 .container {
-  position: relative;
+  /* position: relative; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -160,7 +160,7 @@ body {
 }
 
 .badges {
-  padding: 2px 4px;
+  padding: 2px 3px;
   background-color: #fbf4f3;
   border-radius: 8px;
   margin-right: 299px;
@@ -169,7 +169,7 @@ body {
   justify-content: flex-start; */
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   position: absolute;
-  top: 219px;
+  top: 210px;
   left: 160px;
   right: 16px;
 }
@@ -227,7 +227,7 @@ body {
   height: 1px;
   margin-top: 12px;
   margin-bottom: 12px;
-  background-color: rgba(255, 255, 255, 0.06);
+  background-color: rgb(0 0 0 / 13%);
 }
 
 .body {
@@ -313,8 +313,8 @@ body {
 }
 
 .platform {
-    margin: 1px;
-  width: 230px;
+  margin: 20px 11px -3px;
+  width: 240px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -387,8 +387,8 @@ body {
   }
 
   .badges {
-    margin-right: 35px;
-    top: 125px;
+    margin-right: 40px;
+    top: 120px;
     left: 120px;
   }
 
@@ -405,14 +405,14 @@ body {
   }
 
   .profile .header {
-    padding: 56px 16px 12px 16px;
+    padding: 16px 16px 12px 16px;
   }
 
   .body {
     padding: 0 16px 16px 16px;
   }
   .card {
-  margin: 24px 16px 16px;
+  margin: 70px 16px 16px;
   background: linear-gradient(to bottom, #f7efed, #fef3f4);
   border-radius: 5px;
   padding-top: -100px;

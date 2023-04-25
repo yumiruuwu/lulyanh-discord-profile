@@ -88,3 +88,7 @@ async function fetchDiscordStatus() {
 
 fetchDiscordStatus();
 setInterval(fetchDiscordStatus, 5000); // Update status every 5 seconds
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
