@@ -87,4 +87,4 @@ async function fetchDiscordStatus() {
 }
 
 fetchDiscordStatus();
-setInterval(fetchDiscordStatus, 10000); // Update status every 10 seconds
+setInterval(fetchDiscordStatus, 5000); // Update status every 5 seconds
