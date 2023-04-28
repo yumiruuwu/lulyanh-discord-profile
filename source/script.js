@@ -70,10 +70,8 @@ async function fetchDiscordStatus() {
     }
 
     if (banner.id === null) {
-      discordUserBanner.src = "/public/banner.webp";
-    }
-
-    if (banner.is_animated === true) {
+      discordUserBanner.src = "/public/banner.jpg";
+    } else if (banner.is_animated === true) {
       discordUserBanner.src = `https://cdn.discordapp.com/banners/${userID}/${banner.id}.gif?size=1024`;
     } else {
       discordUserBanner.src = `https://cdn.discordapp.com/banners/${userID}/${banner.id}.png?size=1024`;
