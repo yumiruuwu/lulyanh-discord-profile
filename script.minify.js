@@ -59,8 +59,7 @@ async function fetchDiscordStatus() {
     const discordLookup = await axios.get(`https://discordlookup.mesavirep.xyz/v1/user/${userID}`);
     const sendAPIRequest = await axios.get(`https://discord.com/api/v10/users/${userID}`, {
       headers: {
-        // Authorization: `Bot ${process.env.DISCORD_TOKEN}`,
-        Authorization: `Bot NzI1Njk1MTI2MDY4MDAyOTE3.Gb6f3_.RW0ffrMuZRiniiKnibmyTDQdZBXNSfU8XMQyCw`,
+        Authorization: `Bot ${process.env.DISCORD_TOKEN}`,
         "Content-Type": "application/json"  
       }
     });
