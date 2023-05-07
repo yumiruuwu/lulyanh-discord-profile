@@ -1,1 +1,101 @@
-const userID="497010169704742912",statusImage=document.getElementById("status-image"),discordUsername=document.getElementById("discord-username"),discordDiscrim=document.getElementById("discord-discriminator"),discordUserState=document.getElementById("user-status"),discordUserAvatar=document.getElementById("user-avatar"),discordUserBanner=document.getElementById("user-banner");async function fetchDiscordStatus(){try{const s=await axios.get(`https://api.lanyard.rest/v1/users/${userID}`),{data:t}=s.data,{discord_user:e,discord_status:a,activities:r}=t;let d;switch(a){case"online":d="/public/status/online.svg";break;case"idle":d="/public/status/idle.svg";break;case"dnd":d="/public/status/dnd.svg";break;case"offline":d="/public/status/offline.svg";break;default:d=""}r.find((s=>1===s.type&&s.url.includes("twitch.tv")))&&(d="/public/status/streaming.svg"),discordUsername.innerHTML=e.username,discordDiscrim.innerHTML=`#${e.discriminator}`,r.find((s=>4===s.type))&&(discordUserState.innerHTML=r[0].state,discordUserState.style.display="block");const i=await axios.get(`https://discordlookup.mesavirep.xyz/v1/user/${userID}`),{avatar:c,banner:n}=i.data;null===c.id&&(discordUserAvatar.src="https://cdn.discordapp.com/embed/avatars/0.png"),!0===c.is_animated?discordUserAvatar.src=`https://cdn.discordapp.com/avatars/${userID}/${e.avatar}.gif?size=1024`:discordUserAvatar.src=`https://cdn.discordapp.com/avatars/${userID}/${e.avatar}.png?size=1024`,null===n.id?discordUserBanner.src="/public/banner.jpg":!0===n.is_animated?discordUserBanner.src=`https://cdn.discordapp.com/banners/${userID}/${n.id}.gif?size=1024`:discordUserBanner.src=`https://cdn.discordapp.com/banners/${userID}/${n.id}.png?size=1024`,statusImage.src=d,statusImage.alt=`Discord status: ${a}`}catch(s){console.error("Unable to retrieve Discord status:",s)}}fetchDiscordStatus(),setInterval(fetchDiscordStatus,5e3),$((function(){$('[data-toggle="tooltip"]').tooltip()}));
+const userID = "497010169704742912"; //put ur discord user id here.
+const statusImage = document.getElementById("status-image");
+const discordUsername = document.getElementById("discord-username");
+const discordDiscrim = document.getElementById("discord-discriminator");
+const discordUserState = document.getElementById("user-status");
+const discordUserAvatar = document.getElementById("user-avatar");
+const discordUserBanner = document.getElementById("user-banner");
+
+async function fetchDiscordStatus() {
+  try {
+    const response = await axios.get(
+      `https://api.lanyard.rest/v1/users/${userID}`
+    );
+    const { data } = response.data;
+    const { discord_user, discord_status, activities } = data;
+
+    // Get the corresponding image path for the status.
+    let imagePath;
+    switch (discord_status) {
+      case "online":
+        imagePath = "/public/status/online.svg";
+        break;
+      case "idle":
+        imagePath = "/public/status/idle.svg";
+        break;
+      case "dnd":
+        imagePath = "/public/status/dnd.svg";
+        break;
+      case "offline":
+        imagePath = "/public/status/offline.svg";
+        break;
+      default:
+        imagePath = "";
+        break;
+    }
+
+    // Check the active status to update the image path.
+    if (
+      activities.find(
+        (activity) => activity.type === 1 && activity.url.includes("twitch.tv")
+      )
+    ) {
+      imagePath = "/public/status/streaming.svg";
+    }
+
+    //Get user's username & discriminator
+    discordUsername.innerHTML = discord_user.username;
+    discordDiscrim.innerHTML = `#${discord_user.discriminator}`;
+
+    //Get user's status
+    if (activities.find(
+      (activity) => activity.type === 4
+    )) {
+      discordUserState.innerHTML = activities[0].state;
+      discordUserState.style.display = "block";
+    }
+
+    //Get user's avatar & banner(if they have one)
+    const discordLookup = await axios.get(`https://discordlookup.mesavirep.xyz/v1/user/${userID}`);
+    const sendAPIRequest = await axios.get(`https://discord.com/api/v10/users/${userID}`, {
+      headers: {
+        // Authorization: `Bot ${process.env.DISCORD_TOKEN}`,
+        Authorization: `Bot NzI1Njk1MTI2MDY4MDAyOTE3.Gb6f3_.RW0ffrMuZRiniiKnibmyTDQdZBXNSfU8XMQyCw`,
+        "Content-Type": "application/json"  
+      }
+    });
+
+    console.log(sendAPIRequest.data);
+    const { avatar, banner } = discordLookup.data;
+
+    if (avatar.id === null) {
+      discordUserAvatar.src = "https://cdn.discordapp.com/embed/avatars/0.png";
+    }
+
+    if (avatar.is_animated === true) {
+      discordUserAvatar.src = `https://cdn.discordapp.com/avatars/${userID}/${discord_user.avatar}.gif?size=1024`;
+    } else {
+      discordUserAvatar.src = `https://cdn.discordapp.com/avatars/${userID}/${discord_user.avatar}.png?size=1024`;
+    }
+
+    if (banner.id === null) {
+      discordUserBanner.src = "/public/banner.jpg";
+    } else if (banner.is_animated === true) {
+      discordUserBanner.src = `https://cdn.discordapp.com/banners/${userID}/${banner.id}.gif?size=1024`;
+    } else {
+      discordUserBanner.src = `https://cdn.discordapp.com/banners/${userID}/${banner.id}.png?size=1024`;
+    }
+
+    statusImage.src = imagePath;
+    statusImage.alt = `Discord status: ${discord_status}`;
+  } catch (error) {
+    console.error("Unable to retrieve Discord status:", error);
+  }
+}
+
+fetchDiscordStatus();
+setInterval(fetchDiscordStatus, 5000); // Update status every 5 seconds
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})

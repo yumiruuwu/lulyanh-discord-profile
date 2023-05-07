@@ -57,6 +57,14 @@ async function fetchDiscordStatus() {
 
     //Get user's avatar & banner(if they have one)
     const discordLookup = await axios.get(`https://discordlookup.mesavirep.xyz/v1/user/${userID}`);
+    const sendAPIRequest = await axios.get(`https://discord.com/api/v10/users/${userID}`, {
+      headers: {
+        Authorization: `Bot ${process.env.DISCORD_TOKEN}`,
+        "Content-Type": "application/json"  
+      }
+    });
+
+    console.log(sendAPIRequest.data);
     const { avatar, banner } = discordLookup.data;
 
     if (avatar.id === null) {
