@@ -7,5 +7,8 @@
 
 <b>Source Code:</b><br>
 <a href="https://github.com/Domin-MND/profile-card">Profile Card</a><br>
-<a href="https://github.com/MiyagawaMizu/miyagawamizu.github.io">
+<a href="https://mizu.is-a.dev/">
 Miyagawa Mizu's Profile Card</a>
+<a href="https://github.com/Phineas/lanyard">
+Lanyard</a>
+<a href="https://mesavirep.xyz/">Mesavirep's Discord API</a>
