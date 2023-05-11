@@ -47,6 +47,8 @@ async function fetchDiscordStatus() {
     discordUsername.innerHTML = discord_user.username;
     discordDiscrim.innerHTML = `#${discord_user.discriminator}`;
 
+    document.title = `${discord_user.username}'s Profile`
+
     //Get user's status
     if (activities.find(
       (activity) => activity.type === 4
@@ -86,8 +88,8 @@ async function fetchDiscordStatus() {
 }
 
 fetchDiscordStatus();
-setInterval(fetchDiscordStatus, 5000); // Update status every 5 seconds
+setInterval(fetchDiscordStatus, 30000); // Update status every 30 seconds
 
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
-})
+});
