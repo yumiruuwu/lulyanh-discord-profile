@@ -11,7 +11,7 @@ a:hover {
   overflow-wrap: break-word;
   font-size: 13px;
   line-height: 20px;
-  color: #060607;
+  color: #F2F3F5;
 }
 
 @-webkit-keyframes animate {
@@ -73,13 +73,14 @@ body {
   right: 0;
   bottom: 0;
   display: block;
-  background-image: url("/public/red_flower.png");
-  filter: blur(5px);
-  -webkit-filter: blur(5px);
+  background-image: url("/public/bg.jpg");
+  /* filter: blur(5px);
+  -webkit-filter: blur(5px); */
   background-size: cover;
   background-repeat: no-repeat;
   z-index: -1;
 }
+
 .profile-border {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     padding: 5px;
@@ -90,7 +91,7 @@ body {
     /* scroll-behavior: smooth;
     scroll-snap-type: y mandatory; */
     /* overflow-x: hidden; */
-    background: linear-gradient(to bottom, #ead7d3, #f4afb3);
+    background: linear-gradient(to bottom, #6c6cf8, #212172);
     max-height: calc(100% - 100px);
     border-radius: 8px;
     margin: 0 auto;
@@ -101,7 +102,7 @@ body {
   display: flex; 
   flex-direction: column;
   /* overflow-x: hidden; */
-  background: linear-gradient(to bottom, #f7efed, #fbdfe1);
+  background: linear-gradient(to bottom, #2B2B62, #0E0E2F);
   width: 600px;
   max-height: calc(100vh - 100px);
   /* color: white; */
@@ -128,8 +129,8 @@ body {
   cursor: not-allowed;
 }
 .avatar {
-  border: 8px solid #f8eaea;
-  background-color: #f8eaea;
+  border: 8px solid #232355;
+  background-color: #232355;
   display: inline-block;
   position: absolute;
   border-radius: 50%;
@@ -140,8 +141,8 @@ body {
 .avatar-frame img {
   position: absolute;
   pointer-events: none;
-  bottom: -0.3cm;
-  right: -0.3cm;
+  bottom: -0.31cm;
+  right: -0.31cm;
   width: 144px !important;
   height: 144px;
 }
@@ -156,12 +157,12 @@ body {
   -webkit-transform: translate(50%, 50%);
   transform: translate(50%, 50%);
   position: absolute;
-  background-color: #f8eaea;
+  background-color: #161635;
   bottom: 15%;
   right: 15%;
   border-radius: 50%;
   /* padding: 8px; */
-  border: 8px solid #f8eaea;
+  border: 8px solid #161635;
   top: 62px;
 }
 
@@ -173,7 +174,7 @@ body {
 
 .badges {
   padding: 2px 3px;
-  background-color: #fbf4f3;
+  background-color: #151533;
   border-radius: 8px;
   margin-right: 299px;
   /* -webkit-box-pack: start;
@@ -194,7 +195,7 @@ body {
 .card {
   /* margin: 24px 16px 16px; */
   margin: 80px 16px 16px;
-  background: linear-gradient(to bottom, #f7efed, #fef3f4);
+  background: linear-gradient(to bottom, #151533, #08081B);
   border-radius: 5px;
   padding-top: -100px;
   /* max-height: 100%; */
@@ -204,7 +205,7 @@ body {
 
 .username {
   font-size: 20px;
-  color: #060607;
+  color: #F2F3F5;
   margin: 0 16px 0px 2px;
 }
 
@@ -213,7 +214,7 @@ body {
 }
 
 .username .text-discriminator {
-  color: #4e5058;
+  color: #F2F3F5;
   font-weight: 600;
   border-radius: 50%;
 }
@@ -228,7 +229,7 @@ body {
 
 .text-status {
   margin: 0 16px 0px 20px;
-  color: #060607;
+  color: #F2F3F5;
 }
 
 #user-status {
@@ -249,7 +250,7 @@ body {
 
 .body .title-body {
   font-weight: 700;
-  color: #060607;
+  color: #F2F3F5;
   font-size: 14px;
   line-height: 16px;
   margin-bottom: 8px;
@@ -260,7 +261,7 @@ body {
 }
 
 .content {
-    border-top: 1px solid #d2cdce;
+    border-top: 1px solid #484854;
     padding-top: 12px;
     overflow-x: hidden;
     position: relative;
@@ -302,11 +303,11 @@ body {
   height: 22px;
   font-size: 12px;
   font-weight: 500;
-  box-shadow: 0 0 0 1px #d2cdce;
+  box-shadow: 0 0 0 1px #484854;
 }
 
 .roles-body .rol span {
-  color: black;
+  color: white;
   margin-left: 4px;
   margin-right: 4px;
 }
@@ -336,11 +337,11 @@ body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  box-shadow: 0 0 0 1px #d2cdce;
+  box-shadow: 0 0 0 1px #484854;
 }
 
 .platform-username {
-  color: black;
+  color: white;
   font-size: 16px;
   font-weight: 600;
   margin-left: 10px;
@@ -447,12 +448,12 @@ body {
 
   .username {
     font-size: 20px;
-    color: #060607;
+    color: #F2F3F5;
     margin: 0 16px 0px -3px;
   }
   .text-status {
     margin: 0 16px 0px 14px;
-    color: #060607;
+    color: #F2F3F5;
   }
 
   .socials {
