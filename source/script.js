@@ -1,5 +1,6 @@
 const userID = "497010169704742912"; //put ur discord user id here.
 const statusImage = document.getElementById("status-image");
+const discordUserglobalName = document.getElementById("discord-userglobalname");
 const discordUsername = document.getElementById("discord-username");
 const discordDiscrim = document.getElementById("discord-discriminator");
 const discordUserState = document.getElementById("user-status");
@@ -44,8 +45,14 @@ async function fetchDiscordStatus() {
     }
 
     //Get user's username & discriminator
+    discordUserglobalName.innerHTML = discord_user.global_name;
     discordUsername.innerHTML = discord_user.username;
-    discordDiscrim.innerHTML = `#${discord_user.discriminator}`;
+
+    if (discord_user.discriminator == 0) {
+      discordDiscrim.innerHTML = ``;
+    } else {
+      discordDiscrim.innerHTML = `#${discord_user.discriminator}`;
+    }
 
     document.title = `${discord_user.username}'s Profile`
 
