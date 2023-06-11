@@ -242,13 +242,13 @@ body {
 }
 
 .pronouns {
-  margin: 0 500px 15px 20px;
+  margin: 0 auto -10px 20px;
   color: #F2F3F5;
 }
 
 .text-status {
-  margin: 0 16px -10px 20px;
-  color: #F2F3F5;
+  margin: 20px 16px -10px 20px;
+  color: #B5BAC1;
 }
 
 #user-status {
@@ -471,12 +471,12 @@ body {
     margin: 0 16px 0px -3px;
   }
   .pronouns {
-    margin: -15px 210px 15px 15px;
+    margin: -15px auto -10px 15px;
     color: #F2F3F5;
   }
   .text-status {
-    margin: 0 16px 0px 14px;
-    color: #F2F3F5;
+    margin: 20px 16px 0px 14px;
+    color: #B5BAC1;
   }
 
   .socials {
