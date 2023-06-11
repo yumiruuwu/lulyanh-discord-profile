@@ -45,7 +45,12 @@ async function fetchDiscordStatus() {
     }
 
     //Get user's username & discriminator
-    discordUserglobalName.innerHTML = discord_user.global_name;
+    if (discord_user.global_name = "null") {
+      discordUserglobalName.innerHTML = discord_user.username;
+    } else {
+      discordUserglobalName.innerHTML = discord_user.global_name;
+    }
+
     discordUsername.innerHTML = discord_user.username;
 
     if (discord_user.discriminator == 0) {
