@@ -53,8 +53,8 @@ async function fetchDiscordStatus() {
 
     discordUsername.innerHTML = discord_user.username;
 
-    if (discord_user.discriminator === 0) {
-      discordDiscrim.innerHTML = ``;
+    if (discord_user.discriminator == 0) {
+      discordDiscrim.innerHTML = ` `;
     } else {
       discordDiscrim.innerHTML = `#${discord_user.discriminator}`;
     }

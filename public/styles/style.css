@@ -176,7 +176,7 @@ body {
   padding: 2px 3px;
   background-color: #151533;
   border-radius: 8px;
-  margin-right: 299px;
+  margin-right: 270px;
   /* -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start; */
@@ -419,7 +419,7 @@ body {
   }
 
   .badges {
-    margin-right: 40px;
+    margin-right: 10px;
     top: 120px;
     left: 120px;
   }
