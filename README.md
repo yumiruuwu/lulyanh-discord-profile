@@ -1,3 +1,4 @@
+<div style="text-align: center;font-size: 30px;" align="center">Not working anymore</div>
 <div style="text-align: center;font-size: 30px;" align="center"><b>lulyanh.'s Discord Looking Profile</b></div>
 <div style="text-align: center;font-size: 15px;" align="center">Sorry if you can't understand what I am writing here</div>
 <br>
